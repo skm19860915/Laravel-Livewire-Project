@@ -1,0 +1,150 @@
+
+
+<?php $__env->startSection('content'); ?>
+
+<div role="main" class="main-content">
+
+  <div class="page-content container container-plus">
+    <!-- page header and toolbox -->
+    <div class="page-header pb-2">
+      <h2 class="page-title text-primary-d2 text-150">
+        <a href="<?php echo e(url('settings/users')); ?>" >Staff/User</a>
+        <small class="page-info text-secondary-d2 text-nowrap">
+          <i class="fa fa-angle-double-right text-80"></i>
+          Add New Staff/User
+        </small>
+      </h2>
+    </div>
+
+    <?php echo $__env->make('includes.alerts', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+
+    <div class="cards-container mt-3">
+      <div class="card border-0 shadow-sm radius-0">
+        <div class="card-header bgc-primary-d1">
+          <h5 class="card-title text-white">
+            <i class="fa fa-edit mr-2px"></i>
+            Add New Staff/User
+          </h5>
+        </div>
+
+        <div class="card-body px-2 py-0 pb-2 border-1 brc-primary-m3 border-t-0">
+          <form class="mt-lg-3 forms" autocomplete="off" method="POST" action="<?php echo e(url('settings/add-user')); ?>" >
+            <?php echo csrf_field(); ?>
+            <div class="row">
+              <div class="col12 col-md-6">
+                <div class="form-group">
+                  <label for="username" class="mb-0">Username<span class="text-danger">*</span></label>
+                  <input type="text" id="username" name="username" class="form-control" value="<?php echo e(old('username')); ?>" required
+                  />
+                </div>
+              </div>
+              <div class="col12 col-md-6">
+                <div class="form-group">
+                  <label for="first_name" class="mb-0">First Name<span class="text-danger">*</span></label>
+                  <input type="text" id="first_name" name="first_name" class="form-control" value="<?php echo e(old('first_name')); ?>" required
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col12 col-md-5">
+                <div class="form-group">
+                  <label for="last_name" class="mb-0">Last Name<span class="text-danger">*</span></label>
+                  <input type="text" id="last_name" name="last_name" class="form-control" value="<?php echo e(old('last_name')); ?>" required/>
+                </div>
+              </div>
+              <div class="col12 col-md-6">
+                <div class="form-group">
+                  <label for="email" class="mb-0">Email<span class="text-danger">*</span></label>
+                  <input type="email" id="email" name="email" class="form-control" value="<?php echo e(old('email')); ?>" required />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col12 col-md-6">
+                <div class="form-group">
+                  <label for="password" class="mb-0">Password<span class="text-danger">*</span></label>
+                  <input type="password" id="password" name="password" class="form-control"  required/>
+                </div>
+              </div>
+              <div class="col12 col-md-6">
+                <div class="form-group">
+                  <label for="password_confirmation" class="mb-0">Confirm Password<span class="text-danger">*</span></label>
+                  <input type="password" id="password_confirmation" name="password_confirmation" class="form-control"  required />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col12 col-md-6">
+                <div class="form-group">
+                  <label for="role" class="mb-0">Role<span class="text-danger">*</span></label>
+                  <select type="text" id="role" name="role_id" class="form-control" required>
+                      <option value="">Please Select</option>
+                    <?php $__currentLoopData = $roles; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $r): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <option value="<?php echo e($r->id); ?>"><?php echo e($r->role); ?></option>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="row text-center">
+              <div class="col-md-3 col-lg-3"></div>
+              <div class="col-md-6 col-lg-6">
+                <table>
+                  <thead>
+                    <th style="width:max-content;">Location</th>
+                    <th style="width:150px;">Default</th>
+                  </thead>
+                  <tbody>
+                  <?php if($locations->isNotEmpty()): ?>
+                    <?php $__currentLoopData = $locations; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $location): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                      <tr>
+                        <td class="text-left pt-2">
+                          <label>
+                            <input type="checkbox" name="location[<?php echo e($location->id); ?>]" <?php if($loop->index == 0): ?> checked <?php endif; ?>>
+                            <?php echo e($location->location_name); ?>
+
+                          </label>
+                        </td>
+                        <td>
+                          <input type="radio" class="is-primary" name="is_primary" value="<?php echo e($location->id); ?>" <?php if($loop->index == 0): ?> checked <?php endif; ?>>
+                        </td>
+                      </tr>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                   <?php endif; ?>
+                  </tbody>
+                </table>
+              </div>
+              <div class="col-md-3 col-lg-3"></div>
+            </div>
+
+            <div class="row mt-4">
+              <div class="col12 col-md-12 text-left">
+                <button class="btn btn-primary px-4 submit-buttons"  type="submit">
+                  <i class="fa fa-check mr-1"></i>
+                  Add User
+                </button>
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('script'); ?>
+<script src="<?php echo e(asset('js/locations.js')); ?>" defer></script>
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.auth', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\GithubRepository\pryapus\resources\views/users/create.blade.php ENDPATH**/ ?>

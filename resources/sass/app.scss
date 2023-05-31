@@ -1,0 +1,284 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Bootstrap
+//@import '~bootstrap/scss/bootstrap';
+
+@import "../../node_modules/bootstrap/dist/css/bootstrap.css";
+@import "../../node_modules/@fortawesome/fontawesome-free/css/fontawesome.css";
+@import "../../node_modules/@fortawesome/fontawesome-free/css/regular.css";
+@import "../../node_modules/@fortawesome/fontawesome-free/css/brands.css";
+@import "../../node_modules/@fortawesome/fontawesome-free/css/solid.css";
+@import '../../node_modules/material-icons/iconfont/material-icons.css';
+
+//datatables
+@import "../../node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css";
+@import "../../node_modules/datatables.net-buttons-bs4/css/buttons.bootstrap4.css";
+
+//Ace styles
+@import 'ace';
+@import 'ace-font';
+
+//Page styles
+@import 'login';
+
+@import "toastr";
+
+// //helper
+// @import './helpers.scss';
+
+//jquery ui style
+@import "../../node_modules/jquery-ui-dist/jquery-ui.min.css";
+//jquery ui theme
+@import "./jquery-ui.scss";
+
+// select2
+@import "../../node_modules/select2/dist/css/select2.css";
+//alertify
+@import '../../node_modules/alertifyjs/build/css/alertify.min.css';
+//Date Range Style
+@import "../../node_modules/daterangepicker/daterangepicker.css";
+
+.readonly {
+    background-color: rgba(239, 239, 239, 0.3) !important;
+    border-color: rgba(118, 118, 118, 0.3) !important;
+}
+
+// .bootbox-confirm {
+
+// }
+.modal-footer {
+    background-color: white !important;
+    border: none !important;
+}
+
+.fc-event-time,
+.fc-daygrid-event-dot {
+    display: none !important;
+}
+
+
+a.fc-daygrid-event.fc-daygrid-block-event {
+    background: none !important;
+    border: none !important;
+}
+
+.fc-timegrid-event {
+    background: none !important;
+    border: none !important;
+}
+
+.loader {
+    background: #4950570f;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fc-event-title {
+    font-size: 12px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 0 2px !important;
+    white-space: break-spaces;
+    font-weight: normal !important;
+
+    .fa-star-of-life {
+        font-size: 8px;
+    }
+}
+
+.fc-timeGridWeek-view .fc-timegrid-event .fc-event-title {
+    font-size: 10px !important;
+    padding: 0 1px !important;
+    white-space: break-spaces;
+    font-weight: normal !important;
+
+    .fa-star-of-life {
+        font-size: 7px;
+    }
+}
+
+.bg-purble {
+    background-color: purple;
+    border-color: purple;
+}
+
+.bg-purble:hover {
+
+    background-color: rgb(89, 23, 89) !important;
+}
+
+.show-table-in-print {
+    display: none !important;
+}
+
+.input-clock {
+    background: #eeeeee;
+    display: block;
+    padding: 7px 11px;
+}
+
+.ajs-message {
+    color: white !important;
+}
+
+.max-content {
+    width: max-content !important;
+}
+
+///schedule page
+
+
+
+@media print {
+    .no-print {
+        display: none !important;
+    }
+
+    .show-table-in-print {
+        display: table !important;
+    }
+}
+
+.alert-voicemail {
+    color: #1b1e21;
+    background-color: #9c27b05e;
+    border-color: #9c27b05e;
+}
+
+.bg-voicemail {
+    background-color: #9c27b0ab !important;
+    border-color: #9c27b05e !important;
+}
+
+#ticketsDatatable_wrapper {
+    .row {
+        background: none !important;
+    }
+}
+
+.c-p {
+    cursor: pointer;
+}
+
+.bg-light-success {
+    background-color: #d7fbcf !important;
+}
+
+.bg-light-danger {
+    background-color: #fbcfcf !important;
+}
+
+.bg-light-warning {
+    background-color: #ffc1076e !important;
+}
+
+//appointment cards
+.appt-new {
+    background-color: #999;
+}
+
+.appt-success {
+    background-color: #3cc051 !important;
+}
+
+.appt-confirm-no-show {
+    background-color: #57b5e3 !important;
+}
+
+.appt-cancelled {
+    background-color: #ed4e2a !important;
+}
+
+.appt-reschedule {
+    background-color: #fcb322 !important;
+}
+
+.appt-voicemail {
+    background-color: #852b99 !important;
+}
+
+.appt-no-sales {
+    background-color: #000;
+}
+
+.appt-block, .appt-block.fc-daygrid-dot-event:hover {
+    background: repeating-linear-gradient(
+    -55deg,
+    #222,
+    #222 10px,
+    #333 10px,
+    #333 20px
+    ) !important;
+}
+
+// ====
+
+@for $i from 1 to 500 {
+
+    .w-#{$i}px {
+        width: #{$i}px !important;
+    }
+
+    .w-#{$i} {
+        width: percentage($i/100) !important;
+    }
+
+    .mw-#{$i}px {
+        min-width:#{$i}px !important;
+    }
+
+
+    .h-#{$i}px {
+        height:#{$i}px !important;
+    }
+
+    .h-#{$i} {
+        height: percentage($i/100) !important
+    }
+
+    .mh-#{$i}px {
+        min-height:#{$i}px !important;
+    }
+
+    .fz-#{$i}px {
+        font-size: #{$i}px !important;
+    }
+
+    .fz-#{$i} {
+        font-size: percentage($i/100) !important
+    }
+
+
+
+}
+
+.ajs-message.ajs-custom {
+    color: white;
+    background-color: #aa660d;
+    border-color: #aa660d;
+}
+
+.material-icons.md-18 {
+    font-size: 18px;
+}
+
+.material-icons.md-24 {
+    font-size: 24px;
+}
+
+.material-icons.md-36 {
+    font-size: 36px;
+}
+
+.material-icons.md-48 {
+    font-size: 48px;
+}
+
+.invalid-feedback-border {
+    border: 1px solid red;
+}

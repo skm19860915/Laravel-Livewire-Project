@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./resources/js/users.js"],"names":["$","DataTable","usersJS"],"mappings":"wHAEU,WACFA,EAAE,mBAAmBC,aAI7BC,K","file":"/js/users.js","sourcesContent":["let usersJS = {\n\n    init: function(){\n        $('#usersDatatable').DataTable();\n    }\n}\n\nusersJS.init();\n\n"],"sourceRoot":""}
